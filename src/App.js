@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Dashboard from './pages/dashboard/dashboard';
+import Profile from './pages/profile';
+import CreateATravel from './pages/createatravel/createatravel';
+import FindATravel from './pages/findatravel';
+import TravelHistory from './pages/travelhistory';
+import Login from './pages/login';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Dashboard} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/travelhistory" component={TravelHistory} />
+        <Route exact path="/findatravel" component={FindATravel} />
+        <Route exact path="/createatravel " component={CreateATravel} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
