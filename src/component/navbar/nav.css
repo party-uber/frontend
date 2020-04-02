@@ -1,34 +1,44 @@
 nav {
-    margin-top: 200px;
-    margin-left: 10%;
-    margin-right: 10%;
-    border: 1px #2a2a2e solid;
-    box-shadow: 10px 10px 5px #aaaaaa;
+	margin-top: 200px;
+	margin-left: 10%;
+	margin-right: 10%;
+	border: 1px #2a2a2e solid;
+	box-shadow: 10px 10px 5px #aaaaaa;
 }
 
 nav a {
-    text-decoration: none;
-    display:block;
-    padding: 15px 25px;
-    text-align: center;
-    background-color: rgb(255, 255, 255);
-    color:#464141;
-    margin:0;
-    font-family:sans-serif;
-    border: 1px #2a2a2e solid;
-  }
+	text-decoration: none;
+	display: block;
+	padding: 15px 25px;
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+	color: #464141;
+	margin: 0;
+	border: 1px #2a2a2e solid;
+}
 
-  nav a:last-of-type {
-    margin:auto;
-  }
-  
-  .welcome {
-    text-align: center;
-    margin-top: 15vh;
-    
-  }
-    
-  nav a:hover {
-    background-color: #2a2a2e;
-    color:#ffffff;
-  }
+nav a:last-of-type {
+	margin: auto;
+}
+
+.welcome {
+	font-size: 30px;
+	text-align: center;
+	margin-top: 15vh;
+	color: white;
+}
+
+nav a:hover {
+	text-decoration: none;
+	background-color: #2a2a2e;
+	color: #ffffff;
+}
+
+body {
+	background-image: url("../../img/circle-uber.svg");
+	background-repeat: no-repeat;
+	background-position: relative;
+	background-position-x: -10%;
+	background-position-y: -300%;
+	background-size: 40%;
+}
