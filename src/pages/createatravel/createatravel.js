@@ -1,21 +1,27 @@
 import React from 'react';
+import "./createatravel.css";
 
-
-class CreateATravel extends React.Component {
+class Createatravel extends React.Component {
     render() {
         return (
-            <div>
-                <h1>Create a travel</h1> 
-                <div>
+            <div class="createtravel">
+               <h1> Create a travel </h1>
 
-                    <form>
-                        <input type="text"></input>
-                    </form>
-                </div>
-
+               <div class="form">
+                   <form>
+                       <div class="inputfields">
+                        <input type="text" placeholder="Party name"></input>
+                        <input type="text" placeholder="Postal code of departure"></input>
+                        <input type="decimal" placeholder="Price"></input>
+                        <input type="number" placeholder="Persons"></input>
+                        <button>Create</button>  
+                       </div>
+                       
+                   </form>
+               </div>
             </div>
         )
     }
 }
 
-export default CreateATravel;
+export default Createatravel;

@@ -1,47 +1,27 @@
-nav a {
-  text-decoration: none;
-  display:block;
-  padding: 15px 25px;
-  text-align: center;
-  background-color: rgb(255, 255, 255);
-  color:#464141;
-  margin:0;
-  font-family:sans-serif;
-}
-
-.welcome {
-  text-align: center;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-}
-  
-nav a:hover {
-  background-color: #2a2a2e;
-  color:#ffffff;
-}
-
 .flexboxes {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: 100vh;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	height: 100vh;
 }
 
-.flexboxes div .leftpanel, .rightpanel {
-  border : 1px #ccc solid;
+.flexboxes div .leftpanel,
+.rightpanel {
+	border: 1px #ccc solid;
 }
 
-.leftpanel, .rightpanel{
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  flex: 3;
+.leftpanel,
+.rightpanel {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
+	flex: 3;
 }
 
 .leftpanel {
-  flex: 28;
+	flex: 28;
 }
 
 .rightpanel {
-  flex: 72;
+	flex: 72;
 }

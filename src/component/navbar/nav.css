@@ -1,0 +1,34 @@
+nav {
+    margin-top: 200px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 1px #2a2a2e solid;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+nav a {
+    text-decoration: none;
+    display:block;
+    padding: 15px 25px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    color:#464141;
+    margin:0;
+    font-family:sans-serif;
+    border: 1px #2a2a2e solid;
+  }
+
+  nav a:last-of-type {
+    margin:auto;
+  }
+  
+  .welcome {
+    text-align: center;
+    margin-top: 15vh;
+    
+  }
+    
+  nav a:hover {
+    background-color: #2a2a2e;
+    color:#ffffff;
+  }
