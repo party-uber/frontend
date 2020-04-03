@@ -1,69 +1,68 @@
 import React from "react";
-import mapboxgl from "mapbox-gl";
+import ReactMapGL, { Marker } from "react-map-gl";
 import "./mapbox.css";
 
-mapboxgl.accessToken =
+const MAPBOX_TOKEN =
 	"pk.eyJ1IjoibmlyYXkiLCJhIjoiY2s4aWxvZ2VlMDEyYTNtcXE4c3JiYzlzcyJ9.izkAJN5kKbR4429OH3m2SQ";
 
-class MapBox extends React.Component {
+class Mapbox extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			lng: 5,
-			lat: 34,
-			zoom: 5
+			viewport: {
+				latitude: 37.8,
+				longitude: -122.4,
+				zoom: 14,
+				bearing: 0,
+				pitch: 0
+			}
 		};
 	}
 
+	_onViewportChange = viewport => {
+		this.setState({ viewport });
+	};
+
 	componentDidMount() {
-		const map = new mapboxgl.Map({
-			container: this.mapContainer,
-			style: "mapbox://styles/mapbox/streets-v11",
-			center: [this.state.lng, this.state.lat],
-			zoom: this.state.zoom
-		});
+		navigator.geolocation.getCurrentPosition(position => {
+			console.log(position);
 
-		var options = {
-			enableHighAccuracy: true,
-			timeout: 5000,
-			maximumAge: 0
-		};
-
-		function succes(pos) {
-			const crd = pos.coords;
-
-			map.flyTo({
-				center: [crd.longitude, crd.latitude],
-				zoom: 12,
-				speed: 1,
-				curve: 1,
-				easing(t) {
-					return t;
-				}
+			let newViewport = {
+				latitude: position.coords.latitude,
+				longitude: position.coords.longitude,
+				zoom: 14
+			};
+			this.setState({
+				viewport: newViewport
 			});
-		}
-
-		function error() {}
-
-		navigator.geolocation.getCurrentPosition(succes, error, options);
-
-		map.addControl(
-			new mapboxgl.GeolocateControl({
-				positionOptions: {
-					enableHighAccuracy: true
-				},
-				trackUserLocation: true
-			})
-		);
+		});
 	}
 
 	render() {
 		return (
-			<div class="mapbox">
-				<div ref={el => (this.mapContainer = el)} />
-			</div>
+			<ReactMapGL
+				width="100%"
+				height="100%"
+				{...this.state.viewport}
+				mapStyle="mapbox://styles/mapbox/streets-v11"
+				onViewportChange={this._onViewportChange}
+				mapboxApiAccessToken={MAPBOX_TOKEN}
+			>
+				<Marker latitude={51.441212099999994} longitude={5.4557294999999995}>
+					<svg height="100" width="100">
+						<circle
+							cx="40"
+							cy="40"
+							r="15"
+							stroke="black"
+							stroke-width="3"
+							fill="red"
+						/>
+					</svg>
+				</Marker>
+			</ReactMapGL>
 		);
 	}
 }
 
-export default MapBox;
+export default Mapbox;

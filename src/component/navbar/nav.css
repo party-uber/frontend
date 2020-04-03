@@ -1,9 +1,10 @@
 nav {
-	margin-top: 200px;
+	margin-top: 125px;
 	margin-left: 10%;
 	margin-right: 10%;
+
 	border: 1px #2a2a2e solid;
-	box-shadow: 10px 10px 5px #aaaaaa;
+	border-radius: 10px;
 }
 
 nav a {
@@ -12,13 +13,18 @@ nav a {
 	padding: 15px 25px;
 	text-align: center;
 	background-color: rgb(255, 255, 255);
-	color: #464141;
-	margin: 0;
-	border: 1px #2a2a2e solid;
+	color: #666;
+	border-bottom: 1px #2a2a2e solid;
+	font-family: "Open Sans";
+}
+
+nav a:first-of-type {
+	border-radius: 10px 10px 0px 0px;
 }
 
 nav a:last-of-type {
-	margin: auto;
+	border-bottom: 0px;
+	border-radius: 0px 0px 10px 10px;
 }
 
 .welcome {
