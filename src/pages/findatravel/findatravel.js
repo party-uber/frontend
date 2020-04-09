@@ -1,20 +1,33 @@
-import React from 'react';
+import React from "react";
+import { TravelService } from "../../services/travel.service";
+import { PostalCodeService } from "../../services/postcode.service";
+import Navbar from "../../component/navbar/nav";
 
 class FindATravel extends React.Component {
-    render() {
-        return (
-            <div class="flexboxes">
-                <div class="leftpanel">
-                    test
-                </div>
-                <div class="rightpanel">  
-                    test
+	constructor(props) {
+		super(props);
 
-                </div>
-                        
-            </div>
-        )
-    }
+		this.state = {};
+	}
+
+	async componentDidMount() {
+		this.setState({
+			travels: await TravelService.GetAllTravels(),
+		});
+
+		console.log(this.state);
+	}
+
+	render() {
+		return (
+			<div class="flexboxes">
+				<div class="leftpanel">
+					<Navbar />
+				</div>
+				<div class="rightpanel">test</div>
+			</div>
+		);
+	}
 }
 
 export default FindATravel;
