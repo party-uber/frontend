@@ -12,20 +12,43 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PublicRoute from './component/navbar/PublicRoute';
 import PrivateRoute from './component/navbar/PrivateRoute';
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Switch>
-        <PublicRoute exact path="/" component={Login} restricted="true" />
-        <PublicRoute exact path="/register" component={Register} restricted="true" />
-        <PrivateRoute exact path="/dashboard" component={Dashboard} />
-        <PrivateRoute exact path="/profile" component={Profile} />
-        <PrivateRoute exact path="/travelhistory" component={TravelHistory} />
-        <PrivateRoute exact path="/findatravel" component={FindATravel} />
-        <PrivateRoute exact path="/createatravel " component={CreateATravel} />
-      </Switch>
-    </BrowserRouter>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    if(window.sessionStorage.getItem("token")) {
+      this.props.getUser(window.sessionStorage.getItem("token"));
+      console.log(this.props);
+    }
+  } 
+
+  render() {
+    return (
+      <BrowserRouter>
+        <Switch>
+          <PublicRoute exact path="/" component={Login} restricted="true" />
+          <PublicRoute exact path="/register" component={Register} restricted="true" />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/profile" component={Profile} />
+          <PrivateRoute exact path="/travelhistory" component={TravelHistory} />
+          <PrivateRoute exact path="/findatravel" component={FindATravel} />
+          <PrivateRoute exact path="/createatravel " component={CreateATravel} />
+        </Switch>
+      </BrowserRouter>
+    )
+  }
 }
 
-export default App;
+const mapState = (state) => {
+    console.log(state);
+    return {
+        loggedIn: state.auth.isAuthenticated
+    }
+}
+
+const actionCreators = {
+    getUser: authActions.getUser
+};
+
+const connectedAppPage = connect(mapState, actionCreators)(App);
+export { connectedAppPage as App };
