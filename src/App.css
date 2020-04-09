@@ -1,0 +1,27 @@
+.flexboxes {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	height: 100vh;
+}
+
+.flexboxes div .leftpanel,
+.rightpanel {
+	border: 1px #ccc solid;
+}
+
+.leftpanel,
+.rightpanel {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
+	flex: 3;
+}
+
+.leftpanel {
+	flex: 28;
+}
+
+.rightpanel {
+	flex: 72;
+}

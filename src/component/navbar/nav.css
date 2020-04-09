@@ -1,0 +1,50 @@
+nav {
+	margin-top: 125px;
+	margin-left: 10%;
+	margin-right: 10%;
+
+	border: 1px #2a2a2e solid;
+	border-radius: 10px;
+}
+
+nav a {
+	text-decoration: none;
+	display: block;
+	padding: 15px 25px;
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+	color: #666;
+	border-bottom: 1px #2a2a2e solid;
+	font-family: "Open Sans";
+}
+
+nav a:first-of-type {
+	border-radius: 10px 10px 0px 0px;
+}
+
+nav a:last-of-type {
+	border-bottom: 0px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.welcome {
+	font-size: 30px;
+	text-align: center;
+	margin-top: 15vh;
+	color: white;
+}
+
+nav a:hover {
+	text-decoration: none;
+	background-color: #2a2a2e;
+	color: #ffffff;
+}
+
+body {
+	background-image: url("../../img/circle-uber.svg");
+	background-repeat: no-repeat;
+	background-position: relative;
+	background-position-x: -10%;
+	background-position-y: -300%;
+	background-size: 40%;
+}
