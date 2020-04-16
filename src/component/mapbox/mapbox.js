@@ -1,10 +1,9 @@
 import React from "react";
-import ReactMapGL, { Marker } from "react-map-gl";
+import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import "./mapbox.css";
 import { GetAllTravels } from "../../services/travel.service";
 import { getCoordinates } from "../../services/postcode.service";
-import { mapboxtoken, icon } from "../../services/constants"
-
+import { mapboxtoken, icon } from "../../services/constants";
 
 const pinStyle = {
 	cursor: "pointer",
@@ -25,6 +24,8 @@ class Mapbox extends React.Component {
 			},
 			travels: [],
 		};
+
+		let selectedMarker = undefined;
 	}
 
 	_onViewportChange = (viewport) => {
@@ -56,7 +57,6 @@ class Mapbox extends React.Component {
 							travel.coords = value;
 						}
 					});
-
 					newTravels.push(travel);
 				});
 
@@ -69,9 +69,14 @@ class Mapbox extends React.Component {
 		});
 	}
 
+	setSelectedMarker = (value) => {
+		this.selectedMarker = value;
+	};
+
 	render() {
 		const { size = 40, onClick } = this.props;
 		const { travels } = this.state;
+		const selectedMarker = this.selectedMarker;
 
 		return (
 			<ReactMapGL
@@ -97,7 +102,10 @@ class Mapbox extends React.Component {
 										...pinStyle,
 										transform: `translate(${-size / 2}px,${-size}px)`,
 									}}
-									onClick={onClick}
+									onClick={(e) => {
+										e.preventDefault();
+										this.setSelectedMarker(value);
+									}}
 								>
 									<path d={icon} />
 								</svg>
@@ -107,6 +115,17 @@ class Mapbox extends React.Component {
 						return;
 					}
 				})}
+
+				{selectedMarker != undefined ? (
+					<Popup
+						latitude={selectedMarker.coords.latitude}
+						longitude={selectedMarker.coords.longitude}
+					>
+						<div>
+							<h3>{selectedMarker.eventName}</h3>
+						</div>
+					</Popup>
+				) : null}
 			</ReactMapGL>
 		);
 	}

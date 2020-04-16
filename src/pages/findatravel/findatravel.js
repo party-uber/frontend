@@ -1,7 +1,5 @@
 import React from "react";
 import { GetAllTravels } from "../../services/travel.service";
-import { PostalCodeService } from "../../services/postcode.service";
-import Navbar from "../../component/navbar/nav";
 import Mapbox from "../../component/mapbox/mapbox";
 
 class FindATravel extends React.Component {
