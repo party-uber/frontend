@@ -14,7 +14,12 @@ class Navbar extends React.Component {
 					<Link to="/dashboard">Dashboard</Link>
 					<Link to="/yourtravels">Your travels</Link>
 					<Link to="/createatravel">Create a travel</Link>
+<<<<<<< HEAD
 					<Link to="/chats">Chats</Link>
+=======
+					<Link to="/findatravel"> Find a travel </Link>
+					<Link to="/chat">Chats</Link>
+>>>>>>> master
 					<Link to="/logout">Logout</Link>
 				</nav>
 			</div>
