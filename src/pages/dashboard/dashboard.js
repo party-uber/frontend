@@ -1,10 +1,6 @@
 import React from "react";
 import Navbar from "../../component/navbar/nav";
 import Mapbox from "../../component/mapbox/mapbox";
-<<<<<<< HEAD
-
-class Dashboard extends React.Component {
-=======
 import { PostalCodeService } from "../../services/postcode.service";
 
 class Dashboard extends React.Component {
@@ -12,7 +8,6 @@ class Dashboard extends React.Component {
 		super(props);
 	}
 
->>>>>>> master
 	render() {
 		return (
 			<div class="flexboxes">

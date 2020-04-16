@@ -1,52 +1,4 @@
 .createtravel {
-<<<<<<< HEAD
-    margin-top: 10vh;
-    text-align: center;
-}
-
-.form {
-    margin: 30vh auto 30vh auto;
-    background-color: #2e2e2a;
-    height: auto;
-    width: 50vw;
-    box-shadow: 10px 10px 5px #aaaaaa;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.inputfields > input {
-    margin: 10px auto 10px auto;
-    display: block;
-    background-color: #2e2e2a;
-    outline: 0;
-    border: 0;
-    border-bottom: 2px solid white;
-    color: white;
-    padding: 10px;
-    width: 50%;
-}
-
-.inputfields > button {
-    display: block;
-    margin: 30px auto 10px auto;
-    width: 50%;
-    height: 50px;
-    border: none;
-    background-color: #3564FC;
-    color: white;
-    transition-duration: 0.4s;
-}
-
-.inputfields > button:hover {
-    background-color: white; /* Green */
-    color: #3564FC;
-}
-
-::placeholder {
-    color: #fff;
-}
-=======
 	margin-top: 10vh;
 	text-align: center;
 }
@@ -97,4 +49,3 @@
 ::placeholder {
 	color: #fff;
 }
->>>>>>> master

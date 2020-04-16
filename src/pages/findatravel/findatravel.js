@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-
-class FindATravel extends React.Component {
-    render() {
-        return (
-            <div class="flexboxes">
-                <div class="leftpanel">
-                    test
-                </div>
-                <div class="rightpanel">  
-                    test
-
-                </div>
-                        
-            </div>
-        )
-    }
-}
-
-export default FindATravel;
-=======
 import React from "react";
 import { GetAllTravels } from "../../services/travel.service";
 import { PostalCodeService } from "../../services/postcode.service";
@@ -74,4 +52,3 @@ class FindATravel extends React.Component {
 }
 
 export default FindATravel;
->>>>>>> master
