@@ -1,6 +1,7 @@
 import axios from "axios";
+import { server } from "./constants";
 
-async function CreateTravel(
+export async function CreateTravel(
 	price,
 	maxPersons,
 	pickupDate,
@@ -18,7 +19,7 @@ async function CreateTravel(
 	});
 
 	return axios
-		.post("http://localhost:9999/travel", createTravelObject, {
+		.post(server + "travel", createTravelObject, {
 			headers: {
 				Authorization: `Bearer ${localStorage.getItem("token")}`,
 				"Content-Type": "application/json",
@@ -30,9 +31,9 @@ async function CreateTravel(
 		});
 }
 
-async function GetAllTravels() {
+export async function GetAllTravels() {
 	return axios
-		.get("http://localhost:9999/travel/all", {
+		.get(server + "travel/all", {
 			headers: {
 				Authorization: `Bearer ${localStorage.getItem("token")}`,
 				"Content-Type": "application/json",
@@ -43,8 +44,3 @@ async function GetAllTravels() {
 			return res;
 		});
 }
-
-export const TravelService = {
-	CreateTravel,
-	GetAllTravels,
-};

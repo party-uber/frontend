@@ -1,6 +1,6 @@
 import React from "react";
 import "./createatravel.css";
-import { TravelService } from "../../services/travel.service";
+import { CreateTravel } from "../../services/travel.service";
 
 class Createatravel extends React.Component {
 	constructor(props) {
@@ -41,7 +41,7 @@ class Createatravel extends React.Component {
 			eventName,
 			eventAddress)
 		) {
-			TravelService.CreateTravel(
+			CreateTravel(
 				price,
 				maxPersons,
 				pickupDate,

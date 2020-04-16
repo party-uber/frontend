@@ -1,30 +1,51 @@
 import React from "react";
-import { TravelService } from "../../services/travel.service";
+import { GetAllTravels } from "../../services/travel.service";
 import { PostalCodeService } from "../../services/postcode.service";
 import Navbar from "../../component/navbar/nav";
+import Mapbox from "../../component/mapbox/mapbox";
 
 class FindATravel extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {};
+		this.state = {
+			travels: [],
+		};
 	}
 
-	async componentDidMount() {
-		this.setState({
-			travels: await TravelService.GetAllTravels(),
+	componentDidMount() {
+		GetAllTravels().then((value) => {
+			if (value.status === 200) {
+				this.setState({
+					travels: value.data,
+				});
+			}
 		});
 
-		console.log(this.state);
+		console.log(this.state.travels);
 	}
 
 	render() {
+		const { travels } = this.state;
+
 		return (
 			<div class="flexboxes">
 				<div class="leftpanel">
-					<Navbar />
+					{travels.map((travel, i) => {
+						return (
+							<div key={i} class="event">
+								<div> Event: {travel.eventName} </div>
+								<div> Driver: {travel.owner.fullName} </div>
+								<div> Price: € {travel.price} </div>
+								<div> Available seats: {travel.maxPersons} </div>
+								<button> Accept travel </button>
+							</div>
+						);
+					})}
 				</div>
-				<div class="rightpanel">test</div>
+				<div class="rightpanel">
+					<Mapbox />
+				</div>
 			</div>
 		);
 	}
