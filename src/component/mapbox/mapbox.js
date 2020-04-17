@@ -24,8 +24,6 @@ class Mapbox extends React.Component {
 			},
 			travels: [],
 		};
-
-		let selectedMarker = undefined;
 	}
 
 	_onViewportChange = (viewport) => {
@@ -64,17 +62,23 @@ class Mapbox extends React.Component {
 					travels: newTravels,
 				});
 
-				console.log(this.state.travels);
+				this.forceUpdate();
 			}
 		});
 	}
 
 	setSelectedMarker = (value) => {
 		this.selectedMarker = value;
+		this.forceUpdate();
 	};
 
+	removeSelectedMarker() {
+		this.selectedMarker = undefined;
+		this.forceUpdate();
+	}
+
 	render() {
-		const { size = 40, onClick } = this.props;
+		const { size = 40 } = this.props;
 		const { travels } = this.state;
 		const selectedMarker = this.selectedMarker;
 
@@ -111,15 +115,16 @@ class Mapbox extends React.Component {
 								</svg>
 							</Marker>
 						);
-					} else {
-						return;
 					}
 				})}
 
-				{selectedMarker != undefined ? (
+				{selectedMarker !== undefined ? (
 					<Popup
 						latitude={selectedMarker.coords.latitude}
 						longitude={selectedMarker.coords.longitude}
+						onClose={(e) => {
+							this.removeSelectedMarker();
+						}}
 					>
 						<div>
 							<h3>{selectedMarker.eventName}</h3>

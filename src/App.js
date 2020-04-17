@@ -8,7 +8,6 @@ import FindATravel from "./pages/findatravel/findatravel";
 import TravelHistory from "./pages/travelhistory/travelhistory";
 import { Login } from "./pages/login";
 import { Register } from "./pages/Register";
-import Chat from "./pages/chat/chatpage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PublicRoute from "./component/navbar/PublicRoute";
 import PrivateRoute from "./component/navbar/PrivateRoute";
@@ -22,7 +21,6 @@ class App extends React.Component {
 
 		if (window.sessionStorage.getItem("token")) {
 			this.props.getUser(window.sessionStorage.getItem("token"));
-			console.log(this.props);
 		}
 	}
 
@@ -51,7 +49,6 @@ class App extends React.Component {
 }
 
 const mapState = (state) => {
-	console.log(state);
 	return {
 		loggedIn: state.auth.isAuthenticated,
 	};

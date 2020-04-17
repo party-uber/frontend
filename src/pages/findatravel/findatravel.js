@@ -23,6 +23,19 @@ class FindATravel extends React.Component {
 		console.log(this.state.travels);
 	}
 
+	acceptTravel = (travel) => {
+		if (
+			window.confirm(
+				"Are you sure you want to travel with " +
+					travel.owner.fullName +
+					" to event: " +
+					travel.eventName
+			)
+		) {
+			console.log(travel);
+		}
+	};
+
 	render() {
 		const { travels } = this.state;
 
@@ -36,7 +49,13 @@ class FindATravel extends React.Component {
 								<div> Driver: {travel.owner.fullName} </div>
 								<div> Price: € {travel.price} </div>
 								<div> Available seats: {travel.maxPersons} </div>
-								<button> Accept travel </button>
+								<button
+									onClick={(e) => {
+										this.acceptTravel(travel);
+									}}
+								>
+									Accept travel
+								</button>
 							</div>
 						);
 					})}
