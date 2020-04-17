@@ -40,6 +40,19 @@ export async function GetAllTravels() {
 			},
 		})
 		.then((res) => {
+			return res;
+		});
+}
+
+export async function ApplyToTravel(travelId) {
+	return axios
+		.post(server + "travel/apply/" + travelId, {
+			headers: {
+				Authorization: `Bearer ${localStorage.getItem("token")}`,
+				"Content-Type": "application/json",
+			},
+		})
+		.then((res) => {
 			console.log(res.data);
 			return res;
 		});

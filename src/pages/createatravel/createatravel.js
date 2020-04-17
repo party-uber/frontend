@@ -22,6 +22,7 @@ class Createatravel extends React.Component {
 	}
 
 	handleChange(e) {
+		console.log(e.target);
 		const { name, value } = e.target;
 		this.setState({ [name]: value });
 	}

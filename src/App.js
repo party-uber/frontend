@@ -14,6 +14,7 @@ import PrivateRoute from "./component/navbar/PrivateRoute";
 import { authActions } from "./actions/Auth-actions";
 import { connect } from "react-redux";
 import Chatpage from "./pages/chat/chatpage";
+import RateDriver from "./pages/ratedriver/ratedriver";
 
 class App extends React.Component {
 	constructor(props) {
@@ -40,6 +41,7 @@ class App extends React.Component {
 					<PrivateRoute exact path="/yourtravels" component={TravelHistory} />
 					<PrivateRoute exact path="/findatravel" component={FindATravel} />
 					<PrivateRoute exact path="/createatravel" component={CreateATravel} />
+					<PrivateRoute exact path="/ratedriver" component={RateDriver} />
 
 					<PrivateRoute exact path="/chat" component={Chatpage} />
 				</Switch>

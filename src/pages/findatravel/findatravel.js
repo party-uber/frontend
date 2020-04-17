@@ -1,5 +1,5 @@
 import React from "react";
-import { GetAllTravels } from "../../services/travel.service";
+import { GetAllTravels, ApplyToTravel } from "../../services/travel.service";
 import Mapbox from "../../component/mapbox/mapbox";
 
 class FindATravel extends React.Component {
@@ -32,7 +32,11 @@ class FindATravel extends React.Component {
 					travel.eventName
 			)
 		) {
-			console.log(travel);
+			ApplyToTravel(travel.id).then((value) => {
+				if (value.status === 200) {
+					alert("succesfully applied to travel");
+				}
+			});
 		}
 	};
 
