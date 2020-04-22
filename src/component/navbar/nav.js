@@ -15,6 +15,7 @@ class Navbar extends React.Component {
 					<Link to="/yourtravels">Your travels</Link>
 					<Link to="/createatravel">Create a travel</Link>
 					<Link to="/findatravel"> Find a travel </Link>
+					<Link to="/ratedriver">Rate driver</Link>
 					<Link to="/chat">Chats</Link>
 					<Link to="/logout">Logout</Link>
 				</nav>

@@ -1,6 +1,7 @@
 import React from "react";
 import "./createatravel.css";
 import { CreateTravel } from "../../services/travel.service";
+import { Link } from "react-router-dom";
 
 class Createatravel extends React.Component {
 	constructor(props) {
@@ -21,6 +22,7 @@ class Createatravel extends React.Component {
 	}
 
 	handleChange(e) {
+		console.log(e.target);
 		const { name, value } = e.target;
 		this.setState({ [name]: value });
 	}
@@ -48,6 +50,9 @@ class Createatravel extends React.Component {
 				pickupPoint,
 				eventName,
 				eventAddress
+			).then(
+				alert("event successfully created"),
+				this.props.history.push("/dashboard")
 			);
 		}
 	}

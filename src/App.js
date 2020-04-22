@@ -8,13 +8,13 @@ import FindATravel from "./pages/findatravel/findatravel";
 import TravelHistory from "./pages/travelhistory/travelhistory";
 import { Login } from "./pages/login";
 import { Register } from "./pages/Register";
-import Chat from "./pages/chat/chatpage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PublicRoute from "./component/navbar/PublicRoute";
 import PrivateRoute from "./component/navbar/PrivateRoute";
 import { authActions } from "./actions/Auth-actions";
 import { connect } from "react-redux";
 import Chatpage from "./pages/chat/chatpage";
+import RateDriver from "./pages/ratedriver/ratedriver";
 
 class App extends React.Component {
 	constructor(props) {
@@ -22,7 +22,6 @@ class App extends React.Component {
 
 		if (window.sessionStorage.getItem("token")) {
 			this.props.getUser(window.sessionStorage.getItem("token"));
-			console.log(this.props);
 		}
 	}
 
@@ -42,6 +41,7 @@ class App extends React.Component {
 					<PrivateRoute exact path="/yourtravels" component={TravelHistory} />
 					<PrivateRoute exact path="/findatravel" component={FindATravel} />
 					<PrivateRoute exact path="/createatravel" component={CreateATravel} />
+					<PrivateRoute exact path="/ratedriver" component={RateDriver} />
 
 					<PrivateRoute exact path="/chat" component={Chatpage} />
 				</Switch>
@@ -51,7 +51,6 @@ class App extends React.Component {
 }
 
 const mapState = (state) => {
-	console.log(state);
 	return {
 		loggedIn: state.auth.isAuthenticated,
 	};
