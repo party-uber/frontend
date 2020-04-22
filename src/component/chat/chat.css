@@ -1,0 +1,25 @@
+.msger {
+	height: 100vh;
+	background-color: white;
+}
+
+.msg-left-msg {
+	text-align: left;
+}
+
+.msg-right-msg {
+	text-align: right;
+}
+
+.msger-header-title {
+	size: 12px;
+}
+
+.msger-inputarea {
+	position: absolute;
+	bottom: 0;
+}
+
+input {
+	width: 50vw;
+}

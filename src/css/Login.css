@@ -1,0 +1,36 @@
+.Login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #333;
+}
+
+.Login form {
+  background-color: #FFF;
+  padding: 25px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.Login form button {
+  background-color: #0564fc;
+  border-color: #0564fc;
+}
+
+.Login form button:hover {
+  background-color: #0564fc;
+  border-color: #0564fc;
+}
+
+@media all and (min-width: 480px) {
+    .Login {
+      padding: 60px 0;
+    }
+  
+    .Login form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+  }

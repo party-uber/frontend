@@ -1,0 +1,35 @@
+.leftpanel {
+    padding: 50px 0;
+}
+
+.event {
+    background-color: #f1f1f1;
+    border: 1px solid #000;
+    padding: 15px;    
+    max-width: 80%;
+    width: 100%;
+    margin: 0 auto 25px auto;
+}
+
+.event button {
+    margin-top: 10px;
+    background-color: #0564fc;
+    border: none;
+    color: #FFF;
+    padding: 5px 15px;
+}
+
+.back {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.back a {
+    color: #FFF;
+    background-color: #0564fc;
+    padding: 5px 15px;
+}
+
+.back a:hover {
+    color: #FFF;
+}

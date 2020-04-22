@@ -1,0 +1,46 @@
+.flexboxes {
+	min-height: 100vh;
+}
+
+.flexboxes div .leftpanel,
+.rightpanel {
+	border: 1px #ccc solid;
+}
+
+.rightpanel {
+	height: 500px;
+}
+
+.leftpanel {
+	margin-bottom: 50px;
+}
+
+.leftpanel, .rightpanel {
+	overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+	.flexboxes {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.leftpanel,
+	.rightpanel {
+		display: flex;
+		flex-direction: column;
+		flex-basis: 100%;
+		flex: 3;
+	}
+
+	.leftpanel {
+		margin-bottom: 0;
+		flex: 28;
+	}
+
+	.rightpanel {
+		height: auto;
+		flex: 72;
+	}
+}
