@@ -3,7 +3,8 @@ import allReducers from './reducers';
 import thunk from 'redux-thunk';
 
 const store = createStore(
-    allReducers
+    allReducers,
+    applyMiddleware(thunk)
 );
 
 export default store;
