@@ -72,6 +72,10 @@ class Createatravel extends React.Component {
 				<h1> Create a travel </h1>
 
 				<div class="form">
+					<div className="back">
+						<Link to="/dashboard">Go back</Link>
+					</div>
+
 					<form onSubmit={this.handleSubmit}>
 						<div class="inputfields">
 							<input

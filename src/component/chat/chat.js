@@ -28,7 +28,7 @@ class Chat extends React.Component {
 
 							<div class="msg-text">
 								Morgen dikke fissa!
-								<span role="img">😄</span>
+								<span role="img">:-)</span>
 							</div>
 						</div>
 					</div>

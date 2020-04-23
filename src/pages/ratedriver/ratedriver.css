@@ -1,0 +1,27 @@
+.rating-box {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+}
+
+.rating {
+    background-color: #FFF;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.rating div {
+    margin-bottom: 10px;
+}
+
+.rating button {
+    margin-top: 10px;
+    width: 100%;
+    background-color: #0564fc;
+    color: #FFF;
+    border: none;
+    padding: 5px 15px;
+}
